@@ -4,7 +4,9 @@ function getWeatherData() {
   var apiId = 'b19047189a728dd584f7853252d0d7b3'; // Weather API Id
   var cityName = document.getElementById('search-for').value; // Stores input given by the user
   var apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiId}`; // URL for API
+  var displayWeather = document.getElementById('search-result'); // Stores the html id where to display my data
   var helper = document.getElementsByClassName('helper')[0]; // Stores helper text against the input given by the user
+
   // If input box is empty, run this
   if (!cityName) {
     // Displays helper text if not input
@@ -28,10 +30,10 @@ function getWeatherData() {
         var temperatureInCelcius = weatherDetails.main.temp - 273.15; // Stores the temp in deg Celcius (K - 273.15)
         var maxTemp = weatherDetails.main.temp_max - 273.15; // Stores the max temp
         var minTemp = weatherDetails.main.temp_min - 273.15; // Stores the min temp
-        var displayWeather = document.getElementById('search-result'); // Stores the html id where to display my data
         // Runs if city is found and displays the data on the page
         if (weatherOf) {
           displayWeather.style.display = 'block';
+          displayWeather.style.textAlign = 'left';
           displayWeather.innerHTML =
             "City: " + weatherOf + "<br>" +
             "Type: " + weatherType + `<img src='https://openweathermap.org/img/wn/${logoId}.png' alt='logo'><br>` +
@@ -53,6 +55,10 @@ function getWeatherData() {
         } else { // Rest of the weather types
           displayWeather.style.backgroundImage = 'linear-gradient(to bottom right, #c5e2f7, #395877)';
         }
+      } else if (this.readyState == 4 && this.status == 404) { // Runs if error 404 occurs
+        displayWeather.style.display = "block";
+        displayWeather.style.textAlign = "center";
+        displayWeather.innerHTML = "Invalid or " + cityName + " not found in the DataBase!";
       }
     }
   }

@@ -23,8 +23,9 @@ h1 {
 
 input {
   width: 50%;
-  padding: 10px 24px;
+  padding: 12px;
   border: 1px solid #000;
+  border-radius: 8px;
   outline: none;
 }
 
@@ -74,11 +75,10 @@ button:hover {
   margin: 0 auto;
   margin-top: 12px;
   padding: 24px;
-  background-color: #fff;
+  background-image: linear-gradient(to bottom right, #c5e2f7, #395877);
   border: 1px solid #000;
   border-radius: 10px;
   line-height: 3;
-  text-align: left;
   text-transform: capitalize;
 }
 
