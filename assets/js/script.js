@@ -23,6 +23,7 @@ function getWeatherData() {
         var weatherDetails = JSON.parse(this.responseText); // Stores the JSON response in weatherDetails
         var weatherOf = weatherDetails.name; // Stores the city name of searched data
         var weatherType = weatherDetails.weather[0].main; // Stores the weather type of searched data
+        var weatherDesc = weatherDetails.weather[0].description; // Stores the weather description of searched data
         var logoId = weatherDetails.weather[0].icon; // Stores the logo id of searched data
         var temperatureInCelcius = weatherDetails.main.temp - 273.15; // Stores the temp in deg Celcius (K - 273.15)
         var maxTemp = weatherDetails.main.temp_max - 273.15; // Stores the max temp
@@ -34,6 +35,7 @@ function getWeatherData() {
           displayWeather.innerHTML =
             "City: " + weatherOf + "<br>" +
             "Type: " + weatherType + `<img src='https://openweathermap.org/img/wn/${logoId}.png' alt='logo'><br>` +
+            "Description: " + weatherDesc + "<br>" +
             "Temperature: " + temperatureInCelcius.toPrecision(2) + "&deg;C " +
             "<span>Max: " + maxTemp.toPrecision(2) + "&deg;C Min: " + minTemp.toPrecision(2) + "&deg;C</span>";
         }
