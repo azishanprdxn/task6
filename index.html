@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task 6 | Weather API</title>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-  
+  <div class="wrapper">
+    <div class="input-area">
+      <h1>Weather API</h1>
+      <input type="search" id="search-for" placeholder="Enter the City you want to search for...">
+      <span class="helper">Enter a city first!</span>
+    </div>
+    <div class="input-control">
+      <button onclick="getWeatherData()">Search</button>
+    </div>
+    <div id="search-result"></div>
+  </div>
+
   <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
