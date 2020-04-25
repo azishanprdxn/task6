@@ -12,11 +12,8 @@
   <div class="wrapper">
     <div class="input-area">
       <h1>Weather API</h1>
-      <input type="search" id="search-for" placeholder="Enter the City you want to search for...">
-      <span class="helper">Enter a city first!</span>
-    </div>
-    <div class="input-control">
-      <button onclick="getWeatherData()">Search</button>
+      <input type="text" id="search-for" placeholder="Enter the City you want to search for..." onkeyup="getWeatherData()">
+      <span class="helper-text">Enter a city first!</span>
     </div>
     <div id="search-result"></div>
   </div>

@@ -19,7 +19,6 @@ h1 {
 }
 
 .input-area { padding: 4px; }
-.input-control { padding-bottom: 12px; }
 
 input {
   width: 50%;
@@ -38,34 +37,13 @@ input::placeholder {
 input:focus { box-shadow: 0 0 2px #454545; }
 input:focus::placeholder { color: rgba(0, 0, 0, .7); }
 
-.helper {
+.helper-text {
   display: block;
   padding-top: 4px;
   color: #f00;
   opacity: 0;
   font-size: 14px;
   transform: translateY(-7px);
-}
-
-button {
-  margin: 0 auto;
-  padding: 10px 20px;
-  background-color: rgba(0, 0, 0, .9);
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 0 5px #454545;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  font-variant: small-caps;
-  outline: none;
-}
-
-button:hover {
-  margin: -2px;
-  background-color: #fff;
-  border: 2px solid #000;
-  color: #000;
 }
 
 #search-result {
@@ -97,4 +75,15 @@ button:hover {
   box-shadow: 0 0 10px #454545;
   border-radius: 50px;
   vertical-align: bottom;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper { width: 90%; }
+  input { width: 100%; }
+  #search-result { width: 100%; }
+
+  #search-result>span { 
+    display: block;
+    padding-left: 0;
+  }
 }
